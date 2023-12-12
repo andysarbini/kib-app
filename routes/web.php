@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\{
-    DashboardController
+    DashboardController,
+    SektorController
 };
 
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,7 @@ Route::group([
     // });
     Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
+    Route::resource('/sektor', SektorController::class);
 
     // Route::get('/dashboard', function () {
     //     return redirect()->route('dashboard');

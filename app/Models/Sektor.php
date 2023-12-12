@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Sektor extends Model
 {
     use HasFactory;
+    protected $table = 'sektor_ukm';
+    protected $fillable = ['name', 'slug'];
+
+
 }

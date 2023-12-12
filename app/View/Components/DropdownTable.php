@@ -4,18 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class PaginationTable extends Component
+class DropdownTable extends Component
 {
-    public $model;
-
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($model)
+    public function __construct()
     {
-        $this->model = $model;
+        //
     }
 
     /**
@@ -25,6 +23,6 @@ class PaginationTable extends Component
      */
     public function render()
     {
-        return view('components.pagination-table');
+        return view('components.dropdown-table');
     }
 }

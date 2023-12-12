@@ -4,8 +4,11 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class PaginationTable extends Component
+class NumberTable extends Component
 {
+
+    public $key;
+
     public $model;
 
     /**
@@ -13,8 +16,9 @@ class PaginationTable extends Component
      *
      * @return void
      */
-    public function __construct($model)
+    public function __construct($key, $model)
     {
+        $this->key = $key;
         $this->model = $model;
     }
 
@@ -25,6 +29,6 @@ class PaginationTable extends Component
      */
     public function render()
     {
-        return view('components.pagination-table');
+        return view('components.number-table');
     }
 }
