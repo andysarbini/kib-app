@@ -17,7 +17,31 @@ class DashboardController extends Controller
              ->select('sektor_usaha', DB::raw('count(distinct(nik)) as jumlah'))
              ->groupBy('sektor_usaha')
              ->get();
+        
+        // $kec_not_detect = DB::table('stg_ukm')
+        //      ->select(DB::raw('count(distinct(nik)) as jumlah'))
+        //      ->whereNull('kecamatan')
+        //      ->get()->jumlah;
 
+            //  $kec_not_detect = DB::table('stg_ukm')
+            //  ->select(DB::raw('count(nik) as jumlah')) 
+            //  ->whereNull('kecamatan')          
+            //  ->groupBy('kecamatan')
+            //  ->get();     
+
+            //  $kec_not_detect = DB::table('stg_ukm')->
+            //  whereNull('kecamatan')->
+            // selectRaw('count(nik) as cnt')->pluck('cnt');
+
+            $kec_null = DB::table('stg_ukm')
+                ->whereNull('kecamatan')
+                ->count('nik')
+            ;
+            $kec_not_null = DB::table('stg_ukm')
+                ->whereNotNull('kecamatan')
+                ->count('nik')
+            ;
+// dd($kec_not_detect);
         $list_sektor = [];
 
         foreach ($sektor_ukm as $item)
@@ -31,7 +55,9 @@ class DashboardController extends Controller
             'jum_sektor',
             'sektor_ukm',
             'list_sektor',
-            'list_jumlah'
+            'list_jumlah',
+            'kec_null',
+            'kec_not_null'
         ));
     }
 }

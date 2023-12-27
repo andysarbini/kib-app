@@ -48,6 +48,41 @@
     </div>
 
     <div class="row">
+        <div class="col-lg-6 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    {{-- <h3>{{ format_uang($jumlahProjekPending) }}</h3> --}}
+                    <h3>{{$kec_null}}</h3>
+
+                    <p>Kecamatan Null</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-folder"></i>
+                </div>
+                {{-- <a href="{{ route('gallery.index') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a> --}}
+                <a href="" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    {{-- <h3>{{ format_uang($jumlahProjekPending) }}</h3> --}}
+                    <h3>{{$kec_not_null}}</h3>
+
+                    <p>UKM di Kecamatan</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-folder"></i>
+                </div>
+                {{-- <a href="{{ route('gallery.index') }}" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a> --}}
+                <a href="" class="small-box-footer">Lihat <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <!-- Left col -->
         <section class="col-lg-12 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
